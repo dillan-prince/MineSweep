@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>MineSweep</title>
+  <link rel="shortcut icon" type="image/png" href="../images/favicon.png">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/p5.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.dom.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.11/addons/p5.sound.min.js"></script>
+  <script src="../../jquery-3.2.1.slim.min.js"></script>
+  <script src="../js/sketch.js"></script>
+  <script src="../js/cell.js"></script>
+  <script src="../js/art.js"></script>
+  <script src="../js/grid.js"></script>
+  <script src="../js/gameManager.js"></script>
+  <script src="../js/interfaceManager.js"></script>
+</head>
+<body>
+
+  <div id="mineSweepForm">
+    <div class="col-lg-2 col-md-3 col-sm-4 col-xs-4">
+      <p class="text-center h1">MineSweep</p>
+      <div>
+        <span class="h5"><strong>Difficulty</strong></span>
+        <div class="radio">
+          <label for="radioBeginner">
+            <input type="radio" id="radioBeginner" name="options">      
+            Beginner
+          </label>
+        </div>
+        <div class="radio">
+          <label for="radioIntermediate">
+            <input type="radio" id="radioIntermediate" name="options">      
+            Intermediate
+          </label>
+        </div>
+        <div class="radio">
+          <label for="radioExpert">
+            <input type="radio" id="radioExpert" name="options">      
+            Expert
+          </label>
+        </div>
+        <div class="radio">
+          <label for="radioCustom">
+            <input type="radio" id="radioCustom" name="options">      
+            Custom
+          </label>
+        </div>
+      </div>
+
+      <div>
+        <form id="customParameters" class="form-horizontal">
+          <div class="form-group">
+            <label for="gridHeight">Grid Height</label>
+            <input type="number" id="gridHeight" class="form-control" placeholder="Grid Height"/>
+          </div>
+          <div class="form-group">
+            <label for="gridWidth">Grid Width</label>
+            <input type="number" id="gridWidth" class="form-control" placeholder="Grid Width"/>
+          </div>
+          <div class="form-group">
+            <label for="numberOfMines">Number of Mines</label>
+            <input type="number" id="numberOfMines" class="form-control" placeholder="Number of Mines"/>
+          </div>
+        </form>
+      </div>
+
+      <div class="pull-right">
+        <input type="button" id="quitButton" class="btn btn-default" value="Quit"/>
+        <input type="button" id="resetButton" class="btn btn-default" value="Reset"/>
+        <input type="button" id="playButton" class="btn btn-primary" value="Play!"/>
+      </div>
+
+      
+    </div>
+  </div>
+
+  <div class="col-lg-10 col-md-9 col-sm-8 col-xs-8">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+      <div id="gameInformation" class="form-horizontal">
+        <div>
+          <label for="minesFound" class="control-label text-center">Mines Found: <i id="minesFound" class="text-center"></i></label>
+        </div>
+        <div>
+          <label for="timer" class="control-label text-center">Time: <i id="timer" class="text-center"></i></label>
+        </div>
+        <div>
+          <label for="bestTime" class="control-label text-center">Best Time: <i id="bestTime" class="text-center"></i></label>
+        </div>
+      </div>
+    </div>
+    <div id="canvasWrapper">
+    </div>
+  </div>
+
+</body>
+</html>
